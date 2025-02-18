@@ -1,5 +1,5 @@
 streamlit
 PyMuPDF
-spacy
+spacy==3.8.4
 fr-core-news-sm
 de-core-news-sm
