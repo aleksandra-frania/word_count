@@ -5,6 +5,18 @@ import spacy
 import streamlit as st
 from collections import Counter, defaultdict
 
+def install_spacy_model(model_name):
+    try:
+        spacy.load(model_name)
+    except OSError:
+        st.write(f"Model {model_name} not found. Installing...")
+        os.system(f"python -m spacy download {model_name}")
+        spacy.load(model_name)
+
+# Install necessary models if not already installed
+install_spacy_model("de_core_news_sm")
+install_spacy_model("fr_core_news_sm")
+
 def clean_text(text):
     text = re.sub(r'[^a-zA-Zéàèùâêîôûëïüçßöäü\s-]', '', text)
     text = re.sub(r"\b\w'", '', text)
