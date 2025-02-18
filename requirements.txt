@@ -1,3 +1,5 @@
 streamlit
 PyMuPDF
 spacy
+fr-core-news-sm
+de-core-news-sm
